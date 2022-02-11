@@ -12,9 +12,9 @@ searchBoxRef.addEventListener('input', debounce(searchHandler, DEBOUNCE_DELAY));
 
 function searchHandler(e) {
   e.preventDefault();
+  const name = searchBoxRef.value.trim();
 
-  if (searchBoxRef.value) {
-    const name = searchBoxRef.value.trim();
+  if (name) {
     return fetchCountries(name).then(createMarkup).catch(error);
   } else {
     countryListRef.innerHTML = '';
