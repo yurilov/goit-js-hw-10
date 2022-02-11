@@ -30,7 +30,7 @@ function createMarkup(countries) {
     Notify.info('Too many matches found. Please enter a more specific name.', { timeout: 1000 });
     return;
   }
-  if (countries.length >= 2) {
+  if (countries.length >= 2 && countries.length <= 10) {
     countryListRef.innerHTML = createCountriesList(countries);
   }
   if (countries.length === 1) {
